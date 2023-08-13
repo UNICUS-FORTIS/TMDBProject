@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="321" id="ocr-PX-XvU" customClass="MovieTableViewCell" customModule="TMDBProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="550" height="321"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ocr-PX-XvU" id="aC6-u2-bDZ">
+                <rect key="frame" x="0.0" y="0.0" width="550" height="321"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eij-Te-bDo">
+                        <rect key="frame" x="0.0" y="0.0" width="550" height="321"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="suH-N1-TM5">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eij-Te-bDo" firstAttribute="leading" secondItem="aC6-u2-bDZ" secondAttribute="leading" id="8xp-l8-qKC"/>
+                    <constraint firstAttribute="bottom" secondItem="eij-Te-bDo" secondAttribute="bottom" id="A2V-x4-4sD"/>
+                    <constraint firstAttribute="trailing" secondItem="eij-Te-bDo" secondAttribute="trailing" id="O5P-dl-ZH8"/>
+                    <constraint firstItem="eij-Te-bDo" firstAttribute="top" secondItem="aC6-u2-bDZ" secondAttribute="top" id="XmB-Tt-kS6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="MovieCollectionView" destination="eij-Te-bDo" id="WxG-b6-dpe"/>
+            </connections>
+            <point key="canvasLocation" x="254.96183206106869" y="120.07042253521128"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
