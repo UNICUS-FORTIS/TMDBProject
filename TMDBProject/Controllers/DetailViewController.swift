@@ -36,22 +36,27 @@ class DetailViewController: UIViewController {
         descriptionTV.font = .systemFont(ofSize: 17)
         descriptionTV.textAlignment = .left
         descriptionTV.isEditable = false
+        descriptionTV.textContainer.lineBreakMode = .byTruncatingTail
+        let lineCount = (descriptionTV.contentSize.height - descriptionTV.textContainerInset.top - descriptionTV.textContainerInset.bottom) / descriptionTV.font!.lineHeight
+        if lineCount <= 3 { descriptionTV.isHidden = true }
+        
     }
     
     
     func setupDetails(item: Movie) {
-        
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+        DispatchQueue.global().async { [weak self] in
+            guard let backdropURL = URL(string: "https://image.tmdb.org/t/p/original\(item.backdrop)"),
+                  let posterURL = URL(string: "https://image.tmdb.org/t/p/original\(item.poster)") else {
+                return
+            }
             
-            let backdropURL = URL(string: "https://image.tmdb.org/t/p/original\(item.backdrop)")
-            let posterURL = URL(string: "https://image.tmdb.org/t/p/original\(item.poster)")
-            self.backdropImageView.kf.setImage(with: backdropURL)
-            self.posterImageView.kf.setImage(with: posterURL)
-            self.titleLabel.text = item.title
-            self.rateLabel.text = String(item.rate)
-            self.descriptionTV.text = item.overview
-            print(#function)
+            DispatchQueue.main.async {
+                self?.backdropImageView.kf.setImage(with: backdropURL)
+                self?.posterImageView.kf.setImage(with: posterURL)
+                self?.titleLabel.text = item.title
+                self?.rateLabel.text = String(item.rate)
+                self?.descriptionTV.text = item.overview
+            }
         }
     }
     

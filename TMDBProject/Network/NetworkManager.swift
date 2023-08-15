@@ -38,4 +38,15 @@ class NetworkManager {
         }
     }
     
+    func createMovie(from json:JSON) -> Movie {
+            let title = json["title"].stringValue
+            let rate = json["vote_average"].doubleValue
+            let poster = json["poster_path"].stringValue
+            let backdrop = json["backdrop_path"].stringValue
+            let released = json["release_date"].stringValue
+            let overview = json["overview"].stringValue
+            
+            return Movie(title: title, rate: rate, poster: poster, backdrop: backdrop, released: released, overview: overview)
+    }
+    
 }

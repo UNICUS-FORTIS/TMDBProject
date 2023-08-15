@@ -13,6 +13,7 @@ class MovieViewController: UIViewController {
     
     
     let networkmanager = NetworkManager.shared
+    @IBOutlet weak var lodingIndicator: UIActivityIndicatorView!
     
     
     @IBOutlet weak var MovieTableView: UITableView!
@@ -29,6 +30,7 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lodingIndicator.isHidden = true
         registerTVCell()
         MovieTableView.dataSource = self
         MovieTableView.delegate = self
@@ -45,31 +47,39 @@ class MovieViewController: UIViewController {
     }
     
     func loadAllDatas() {
+        lodingIndicator.isHidden = false
+
+        DispatchQueue.main.async {
+            self.lodingIndicator.startAnimating()
+        }
+        
         DispatchQueue.global().async {
             self.fetchPopularData()
-            print("1")
         }
         
         DispatchQueue.global().async {
             self.fetchNowPlayingData()
-            print("2")
         }
         
         DispatchQueue.global().async {
             self.fetchTopRatedData()
-            print("3")
         }
         
         DispatchQueue.global().async {
             self.fetchUpcommingData()
-            print("4")
         }
-        //        DispatchQueue.main.async {
-        ////            self.categoryArray = [self.popularList, self.nowPlaying, self.topRated, self.upcomming]
-        //            self.MovieTableView.reloadData()
-        ////            print("5")
-        ////            print(self.categoryArray)
-        //        }
+        DispatchQueue.main.async {
+            self.lodingIndicator.startAnimating()
+        }
+        
+        DispatchQueue.main.async {
+            self.lodingIndicator.stopAnimating()
+        }
+
+        DispatchQueue.main.async {
+            self.lodingIndicator.isHidden = true
+            self.lodingIndicator.stopAnimating()
+        }
     }
     
     func fetchPopularData() {
@@ -205,8 +215,8 @@ extension MovieViewController: UITableViewDelegate {
         default:
             return nil
         }
-        headerLabel.textColor = UIColor.black // 헤더 텍스트 색상 설정
-        headerLabel.font = UIFont.boldSystemFont(ofSize: 20) // 헤더 텍스트 폰트 설정
+        headerLabel.textColor = UIColor.black
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
         
         headerView.addSubview(headerLabel)
         
@@ -224,7 +234,7 @@ extension MovieViewController: MoveViewController {
         //Hoxy..호출을 컬렉션뷰Cell에서 호출해서 그러니..
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-
+            
             let sb = UIStoryboard(name: "Main", bundle: nil)
             if let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController {
                 vc.setupDetails(item: withData)

@@ -16,7 +16,7 @@ class MovieTableViewCell: UITableViewCell {
     
     var delegate: MoveViewController?
     
-    var movie: [Movie] = [] {
+    var movie: [Movie]? {
         didSet {
             MovieCollectionView.reloadData()
         }
@@ -59,14 +59,14 @@ extension MovieTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return movie.count
+        return movie?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
-        let movie = movie[indexPath.row]
-        
-        cell.cellConfigure(item: movie)
+        guard let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {return UICollectionViewCell() }
+        if let movie = movie?[indexPath.row] {
+            cell.cellConfigure(item: movie)
+        }
         return cell
     }
     
@@ -74,7 +74,7 @@ extension MovieTableViewCell: UICollectionViewDataSource {
 
 extension MovieTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movieIndexPath = movie[indexPath.item]
+        guard let movieIndexPath = movie?[indexPath.item] else { return }
         delegate?.toDatailViewController(withData: movieIndexPath)
     }
 }
