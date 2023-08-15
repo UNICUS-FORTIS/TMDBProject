@@ -18,29 +18,20 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61h-ET-BqJ">
-                        <rect key="frame" x="0.0" y="0.0" width="235" height="274"/>
+                        <rect key="frame" x="0.0" y="0.0" width="235" height="294"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4St-UQ-Udj">
-                        <rect key="frame" x="0.0" y="279" width="235" height="60"/>
+                        <rect key="frame" x="0.0" y="299" width="235" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlZ-ZG-RXC">
-                                <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DRI-Pr-cd4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBJ-ip-BpB">
-                                <rect key="frame" x="0.0" y="34" width="235" height="26"/>
+                                <rect key="frame" x="0.0" y="0.0" width="235" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="WIq-uW-ku5"/>
+                            <constraint firstAttribute="height" constant="40" id="WIq-uW-ku5"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -58,10 +49,9 @@
             <size key="customSize" width="235" height="339"/>
             <connections>
                 <outlet property="posterImageView" destination="61h-ET-BqJ" id="OF5-eR-yaP"/>
-                <outlet property="releasedLabel" destination="qBJ-ip-BpB" id="Oo1-K0-geg"/>
                 <outlet property="titleLabel" destination="LlZ-ZG-RXC" id="w99-x0-aUC"/>
             </connections>
-            <point key="canvasLocation" x="232.82442748091603" y="89.788732394366207"/>
+            <point key="canvasLocation" x="430" y="25"/>
         </collectionViewCell>
     </objects>
 </document>

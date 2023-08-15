@@ -27,6 +27,8 @@
 		DEA64B832A87CF4E00C164BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA64B822A87CF4E00C164BE /* NetworkManager.swift */; };
 		DEA64B852A87D07500C164BE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA64B842A87D07500C164BE /* Endpoint.swift */; };
 		DEA64B882A87D0E900C164BE /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA64B872A87D0E900C164BE /* URL+Extension.swift */; };
+		DED12DD72A8B854A00849064 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED12DD62A8B854A00849064 /* DetailViewController.swift */; };
+		DED12DD92A8B950400849064 /* MoveSceneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED12DD82A8B950400849064 /* MoveSceneProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		DEA64B822A87CF4E00C164BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DEA64B842A87D07500C164BE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DEA64B872A87D0E900C164BE /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		DED12DD62A8B854A00849064 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DED12DD82A8B950400849064 /* MoveSceneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSceneProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA64B4C2A8772C300C164BE /* MovieViewController.swift */,
+				DED12DD62A8B854A00849064 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA64B7B2A87917A00C164BE /* ReusableProtocols.swift */,
+				DED12DD82A8B950400849064 /* MoveSceneProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				DEA64B882A87D0E900C164BE /* URL+Extension.swift in Sources */,
 				DEA64B6E2A87876200C164BE /* MovieTableViewCell.swift in Sources */,
 				DEA64B832A87CF4E00C164BE /* NetworkManager.swift in Sources */,
+				DED12DD72A8B854A00849064 /* DetailViewController.swift in Sources */,
+				DED12DD92A8B950400849064 /* MoveSceneProtocols.swift in Sources */,
 				DEA64B4D2A8772C300C164BE /* MovieViewController.swift in Sources */,
 				DEA64B7C2A87917A00C164BE /* ReusableProtocols.swift in Sources */,
 				DEA64B492A8772C300C164BE /* AppDelegate.swift in Sources */,

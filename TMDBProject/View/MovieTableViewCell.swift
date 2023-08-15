@@ -14,6 +14,8 @@ class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var MovieCollectionView: UICollectionView!
     
+    var delegate: MoveViewController?
+    
     var movie: [Movie] = [] {
         didSet {
             MovieCollectionView.reloadData()
@@ -24,6 +26,7 @@ class MovieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         MovieCollectionView.dataSource = self
+        MovieCollectionView.delegate = self
         registerCVCell()
         setupCVCell()
     }
@@ -42,10 +45,10 @@ class MovieTableViewCell: UITableViewCell {
         let height = UIScreen.main.bounds.height
         layout.itemSize = CGSize(width: width/2.5, height: height/3)
         layout.sectionInset = UIEdgeInsets(top: 0, left: spacing*2, bottom: 0, right: spacing*2)
-//        //셀 가로간격
+        //        //셀 가로간격
         layout.minimumInteritemSpacing = spacing
         //셀 세로간격
-//        layout.minimumLineSpacing = spacing
+        //        layout.minimumLineSpacing = spacing
         layout.scrollDirection = .horizontal
         MovieCollectionView.collectionViewLayout = layout
         MovieCollectionView.showsHorizontalScrollIndicator = false
@@ -67,4 +70,11 @@ extension MovieTableViewCell: UICollectionViewDataSource {
         return cell
     }
     
+}
+
+extension MovieTableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movieIndexPath = movie[indexPath.item]
+        delegate?.toDatailViewController(withData: movieIndexPath)
+    }
 }
