@@ -13,7 +13,6 @@
 		DEA64B502A8772C300C164BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA64B4E2A8772C300C164BE /* Main.storyboard */; };
 		DEA64B522A8772C300C164BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA64B512A8772C300C164BE /* Assets.xcassets */; };
 		DEA64B552A8772C300C164BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA64B532A8772C300C164BE /* LaunchScreen.storyboard */; };
-		DEA64B5E2A8772DC00C164BE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DEA64B5D2A8772DC00C164BE /* SwiftyJSON */; };
 		DEA64B692A8784F100C164BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DEA64B682A8784F100C164BE /* .gitignore */; };
 		DEA64B6C2A87851300C164BE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA64B6B2A87851300C164BE /* APIKey.swift */; };
 		DEA64B6E2A87876200C164BE /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA64B6D2A87876200C164BE /* MovieTableViewCell.swift */; };
@@ -62,7 +61,6 @@
 			files = (
 				DED12DDF2A8BDF8E00849064 /* Alamofire in Frameworks */,
 				DED12DDC2A8BDF8300849064 /* Kingfisher in Frameworks */,
-				DEA64B5E2A8772DC00C164BE /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +183,6 @@
 			);
 			name = TMDBProject;
 			packageProductDependencies = (
-				DEA64B5D2A8772DC00C164BE /* SwiftyJSON */,
 				DED12DDB2A8BDF8300849064 /* Kingfisher */,
 				DED12DDE2A8BDF8E00849064 /* Alamofire */,
 			);
@@ -218,7 +215,6 @@
 			);
 			mainGroup = DEA64B3C2A8772C200C164BE;
 			packageReferences = (
-				DEA64B5C2A8772DC00C164BE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				DED12DDA2A8BDF8300849064 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DED12DDD2A8BDF8E00849064 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
@@ -492,14 +488,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DEA64B5C2A8772DC00C164BE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		DED12DDA2A8BDF8300849064 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -519,11 +507,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DEA64B5D2A8772DC00C164BE /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DEA64B5C2A8772DC00C164BE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
 		DED12DDB2A8BDF8300849064 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DED12DDA2A8BDF8300849064 /* XCRemoteSwiftPackageReference "Kingfisher" */;

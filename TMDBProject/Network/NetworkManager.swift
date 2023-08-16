@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class NetworkManager {
     
@@ -19,34 +18,16 @@ class NetworkManager {
         Headers.accept
     ]
     
-    func fetchData(type: Endpoint, completion: @escaping(JSON)-> Void ) {
+    
+    public func fetchData(type: Endpoint, completion: @escaping (MovieData)-> Void ) {
         
         let url = type.requestURL+"language=ko-KR?page=1"
         print(url)
         
-        AF.request(url, method: .get, headers: myHeader).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                completion(json)
-                
-                
-            case .failure(let error):
-                print(error)
-            }
+        AF.request(url, method: .get, headers: myHeader).validate().responseDecodable(of: MovieData.self) { response in
+            
+            guard let value = response.value else { return }
+            completion(value)
         }
     }
-    
-    func createMovie(from json:JSON) -> Movie {
-            let title = json["title"].stringValue
-            let rate = json["vote_average"].doubleValue
-            let poster = json["poster_path"].stringValue
-            let backdrop = json["backdrop_path"].stringValue
-            let released = json["release_date"].stringValue
-            let overview = json["overview"].stringValue
-            
-            return Movie(title: title, rate: rate, poster: poster, backdrop: backdrop, released: released, overview: overview)
-    }
-    
 }

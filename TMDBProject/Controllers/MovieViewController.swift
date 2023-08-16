@@ -48,7 +48,7 @@ class MovieViewController: UIViewController {
     
     func loadAllDatas() {
         lodingIndicator.isHidden = false
-
+        
         DispatchQueue.main.async {
             self.lodingIndicator.startAnimating()
         }
@@ -68,91 +68,51 @@ class MovieViewController: UIViewController {
         DispatchQueue.global().async {
             self.fetchUpcommingData()
         }
-        DispatchQueue.main.async {
-            self.lodingIndicator.startAnimating()
-        }
         
         DispatchQueue.main.async {
             self.lodingIndicator.stopAnimating()
         }
-
+        
         DispatchQueue.main.async {
             self.lodingIndicator.isHidden = true
             self.lodingIndicator.stopAnimating()
         }
     }
     
-    func fetchPopularData() {
-        networkmanager.fetchData(type: .popular) { [weak self] json in
-            
-            for item in json["results"].arrayValue {
-                let title = item["title"].stringValue
-                let rate = item["vote_average"].doubleValue
-                let poster = item["poster_path"].stringValue
-                let backdrop = item["backdrop_path"].stringValue
-                let released = item["release_date"].stringValue
-                let overview = item["overview"].stringValue
-                
-                let data = Movie(title: title, rate: rate, poster: poster, backdrop: backdrop, released: released, overview: overview)
-                
-                self?.popularList.append(data)
+    private func fetchPopularData() {
+        print(#function)
+        networkmanager.fetchData(type: .popular) { [weak self] movie in
+            self?.popularList.append(contentsOf: movie.results)
+            DispatchQueue.main.async {
+                self?.MovieTableView.reloadData()
             }
-            self?.MovieTableView.reloadData()
         }
     }
     
-    func fetchTopRatedData() {
-        networkmanager.fetchData(type: .topRated) { [weak self] json in
-            for item in json["results"].arrayValue {
-                let title = item["title"].stringValue
-                let rate = item["vote_average"].doubleValue
-                let poster = item["poster_path"].stringValue
-                let backdrop = item["backdrop_path"].stringValue
-                let released = item["release_date"].stringValue
-                let overview = item["overview"].stringValue
-                
-                let data = Movie(title: title, rate: rate, poster: poster, backdrop: backdrop, released: released, overview: overview)
-                
-                self?.topRated.append(data)
+    private func fetchTopRatedData() {
+        networkmanager.fetchData(type: .topRated) { [weak self] movie in
+            self?.topRated.append(contentsOf: movie.results)
+            DispatchQueue.main.async {
+                self?.MovieTableView.reloadData()
             }
-            self?.MovieTableView.reloadData()
-            
         }
     }
     
-    func fetchNowPlayingData() {
-        networkmanager.fetchData(type: .nowPlaying) { [weak self] json in
-            for item in json["results"].arrayValue {
-                let title = item["title"].stringValue
-                let rate = item["vote_average"].doubleValue
-                let poster = item["poster_path"].stringValue
-                let backdrop = item["backdrop_path"].stringValue
-                let released = item["release_date"].stringValue
-                let overview = item["overview"].stringValue
-                
-                let data = Movie(title: title, rate: rate, poster: poster, backdrop: backdrop, released: released, overview: overview)
-                
-                self?.nowPlaying.append(data)
+    private func fetchNowPlayingData() {
+        networkmanager.fetchData(type: .nowPlaying) { [weak self] movie in
+            self?.nowPlaying.append(contentsOf: movie.results)
+            DispatchQueue.main.async {
+                self?.MovieTableView.reloadData()
             }
-            self?.MovieTableView.reloadData()
         }
     }
     
-    func fetchUpcommingData() {
-        networkmanager.fetchData(type: .upcomming) { [weak self] json in
-            for item in json["results"].arrayValue {
-                let title = item["title"].stringValue
-                let rate = item["vote_average"].doubleValue
-                let poster = item["poster_path"].stringValue
-                let backdrop = item["backdrop_path"].stringValue
-                let released = item["release_date"].stringValue
-                let overview = item["overview"].stringValue
-                
-                let data = Movie(title: title, rate: rate, poster: poster, backdrop: backdrop, released: released, overview: overview)
-                
-                self?.upcoming.append(data)
+    private func fetchUpcommingData() {
+        networkmanager.fetchData(type: .upcomming) { [weak self] movie in
+            self?.upcoming.append(contentsOf: movie.results)
+            DispatchQueue.main.async {
+                self?.MovieTableView.reloadData()
             }
-            self?.MovieTableView.reloadData()
         }
     }
 }

@@ -12,6 +12,9 @@ class DetailViewController: UIViewController {
     
     var movie: Movie?
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     @IBOutlet weak var backdropImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -39,14 +42,15 @@ class DetailViewController: UIViewController {
         descriptionTV.textContainer.lineBreakMode = .byTruncatingTail
         let lineCount = (descriptionTV.contentSize.height - descriptionTV.textContainerInset.top - descriptionTV.textContainerInset.bottom) / descriptionTV.font!.lineHeight
         if lineCount <= 3 { descriptionTV.isHidden = true }
-        
     }
     
     
-    func setupDetails(item: Movie) {
+    
+    
+    public func setupDetails(item: Movie) {
         DispatchQueue.global().async { [weak self] in
-            guard let backdropURL = URL(string: "https://image.tmdb.org/t/p/original\(item.backdrop)"),
-                  let posterURL = URL(string: "https://image.tmdb.org/t/p/original\(item.poster)") else {
+            guard let backdropURL = URL(string: "https://image.tmdb.org/t/p/original\(item.backdropPath)"),
+                  let posterURL = URL(string: "https://image.tmdb.org/t/p/original\(item.posterPath)") else {
                 return
             }
             
@@ -54,7 +58,7 @@ class DetailViewController: UIViewController {
                 self?.backdropImageView.kf.setImage(with: backdropURL)
                 self?.posterImageView.kf.setImage(with: posterURL)
                 self?.titleLabel.text = item.title
-                self?.rateLabel.text = String(item.rate)
+                self?.rateLabel.text = String(item.voteAverage)
                 self?.descriptionTV.text = item.overview
             }
         }

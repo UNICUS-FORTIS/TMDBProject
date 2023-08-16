@@ -24,10 +24,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
     
     func cellConfigure(item: Movie) {
-        
-        titleLabel.text = item.title
         DispatchQueue.main.async {
-            let imageUrl = URL(string: "https://image.tmdb.org/t/p/original\(item.poster)")
+            self.titleLabel.text = item.title
+            let imageUrl = URL(string: "https://image.tmdb.org/t/p/original\(item.posterPath)")
             self.posterImageView.kf.setImage(with: imageUrl)
         }
     }

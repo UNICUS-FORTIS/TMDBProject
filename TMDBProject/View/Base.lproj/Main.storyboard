@@ -149,6 +149,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backdropImageView" destination="eLD-g1-65t" id="T1n-lY-6CV"/>
+                        <outlet property="collectionView" destination="loL-Kw-wWx" id="hFm-40-bww"/>
                         <outlet property="descriptionTV" destination="XAH-tn-koz" id="HHc-WC-wHZ"/>
                         <outlet property="posterImageView" destination="vQy-E9-E0O" id="UJz-48-3Ss"/>
                         <outlet property="rateLabel" destination="vRF-hY-jid" id="FK5-qs-v1o"/>
