@@ -14,7 +14,7 @@ class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var MovieCollectionView: UICollectionView!
     
-    var delegate: MoveViewController?
+    var delegate: MoveViewControllerProtocol?
     
     var movie: [Movie]? {
         didSet {

@@ -183,7 +183,7 @@ extension MovieViewController: UITableViewDelegate {
     
 }
 
-extension MovieViewController: MoveViewController {
+extension MovieViewController: MoveViewControllerProtocol {
     
     func toDatailViewController(withData: Movie) {
         

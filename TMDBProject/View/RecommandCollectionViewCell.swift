@@ -10,15 +10,11 @@ import Kingfisher
 
 class RecommandCollectionViewCell: UICollectionViewCell {
     
-    
-    
     @IBOutlet weak var backdropForRCMD: UIImageView!
     @IBOutlet weak var titleForRCMD: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func prepareForReuse() {
@@ -35,7 +31,6 @@ class RecommandCollectionViewCell: UICollectionViewCell {
             } else {
                 print("noimage")
             }
-            
         }
     }
     

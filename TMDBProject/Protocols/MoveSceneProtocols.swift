@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol MoveViewController {
+protocol MoveViewControllerProtocol {
     func toDatailViewController(withData: Movie)
 }
