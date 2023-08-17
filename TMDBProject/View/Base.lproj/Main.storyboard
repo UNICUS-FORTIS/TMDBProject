@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZ6-ia-Q1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2005.3435114503816" y="621.83098591549299"/>
+            <point key="canvasLocation" x="3627" y="-27"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xrS-IO-rgq">
@@ -179,21 +179,6 @@
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Z8z-B2-mhP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GgH-OS-eST" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xex-LT-aki">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n0C-5S-fZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="153" y="622"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="QRw-IS-WP6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="krc-xx-V1B" sceneMemberID="viewController">
@@ -209,13 +194,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiM-Up-4sG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078.6259541984732" y="621.83098591549299"/>
+            <point key="canvasLocation" x="2698" y="-29"/>
         </scene>
-        <!--Item-->
+        <!--Movie-->
         <scene sceneID="vSp-bt-ETY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ye2-Wf-IPT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6gj-il-Zna"/>
+                    <tabBarItem key="tabBarItem" title="Movie" image="popcorn" catalog="system" id="6gj-il-Zna"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bY-uU-Fcu">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -233,6 +218,7 @@
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="popcorn" catalog="system" width="102" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

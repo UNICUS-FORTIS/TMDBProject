@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61h-ET-BqJ">
-                        <rect key="frame" x="0.0" y="0.0" width="235" height="294"/>
+                        <rect key="frame" x="0.0" y="0.0" width="235" height="299"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4St-UQ-Udj">
                         <rect key="frame" x="0.0" y="299" width="235" height="40"/>
@@ -38,7 +38,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="4St-UQ-Udj" firstAttribute="top" secondItem="61h-ET-BqJ" secondAttribute="bottom" constant="5" id="2e1-YE-PCd"/>
+                <constraint firstItem="4St-UQ-Udj" firstAttribute="top" secondItem="61h-ET-BqJ" secondAttribute="bottom" id="2e1-YE-PCd"/>
                 <constraint firstItem="61h-ET-BqJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SXh-ba-5Bc"/>
                 <constraint firstAttribute="trailing" secondItem="61h-ET-BqJ" secondAttribute="trailing" id="X3S-9i-GLK"/>
                 <constraint firstAttribute="bottom" secondItem="4St-UQ-Udj" secondAttribute="bottom" id="XHL-aK-qPK"/>
@@ -51,7 +51,7 @@
                 <outlet property="posterImageView" destination="61h-ET-BqJ" id="OF5-eR-yaP"/>
                 <outlet property="titleLabel" destination="LlZ-ZG-RXC" id="w99-x0-aUC"/>
             </connections>
-            <point key="canvasLocation" x="430" y="25"/>
+            <point key="canvasLocation" x="429.7709923664122" y="25"/>
         </collectionViewCell>
     </objects>
 </document>

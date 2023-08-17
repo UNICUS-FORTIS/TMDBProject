@@ -13,11 +13,9 @@ class MovieViewController: UIViewController {
     
     
     let networkmanager = NetworkManager.shared
-    @IBOutlet weak var lodingIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet weak var lodingIndicator: UIActivityIndicatorView!    
     
     @IBOutlet weak var MovieTableView: UITableView!
-    
     
     var popularList:[Movie] = []
     var nowPlaying:[Movie] = []
@@ -82,7 +80,7 @@ class MovieViewController: UIViewController {
     private func fetchPopularData() {
         print(#function)
         networkmanager.fetchData(type: .popular) { [weak self] movie in
-            self?.popularList.append(contentsOf: movie.results)
+            self?.popularList = movie.results
             DispatchQueue.main.async {
                 self?.MovieTableView.reloadData()
             }
@@ -91,7 +89,7 @@ class MovieViewController: UIViewController {
     
     private func fetchTopRatedData() {
         networkmanager.fetchData(type: .topRated) { [weak self] movie in
-            self?.topRated.append(contentsOf: movie.results)
+            self?.topRated = movie.results
             DispatchQueue.main.async {
                 self?.MovieTableView.reloadData()
             }
@@ -100,7 +98,7 @@ class MovieViewController: UIViewController {
     
     private func fetchNowPlayingData() {
         networkmanager.fetchData(type: .nowPlaying) { [weak self] movie in
-            self?.nowPlaying.append(contentsOf: movie.results)
+            self?.nowPlaying = movie.results
             DispatchQueue.main.async {
                 self?.MovieTableView.reloadData()
             }
@@ -109,7 +107,7 @@ class MovieViewController: UIViewController {
     
     private func fetchUpcommingData() {
         networkmanager.fetchData(type: .upcomming) { [weak self] movie in
-            self?.upcoming.append(contentsOf: movie.results)
+            self?.upcoming = movie.results
             DispatchQueue.main.async {
                 self?.MovieTableView.reloadData()
             }
@@ -167,11 +165,11 @@ extension MovieViewController: UITableViewDelegate {
         case 0:
             headerLabel.text = "Popular Movies"
         case 1:
-            headerLabel.text =  "Now Playing"
+            headerLabel.text = "Now Playing"
         case 2:
-            headerLabel.text =  "Top Rated"
+            headerLabel.text = "Top Rated"
         case 3:
-            headerLabel.text =  "Upcoming Movies"
+            headerLabel.text = "Upcoming Movies"
         default:
             return nil
         }
