@@ -21,7 +21,6 @@ class MovieTableViewCell: UITableViewCell {
             MovieCollectionView.reloadData()
         }
     }
-    var cellCount: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -65,7 +64,9 @@ extension MovieTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {return UICollectionViewCell() }
         if let movie = movie?[indexPath.row] {
-            cell.cellConfigure(item: movie)
+            DispatchQueue.global().async {
+                cell.cellConfigure(item: movie)
+            }
         }
         return cell
     }

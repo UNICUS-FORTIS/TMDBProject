@@ -13,7 +13,7 @@ class MovieViewController: UIViewController {
     
     
     let networkmanager = NetworkManager.shared
-    @IBOutlet weak var lodingIndicator: UIActivityIndicatorView!    
+    @IBOutlet weak var lodingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var MovieTableView: UITableView!
     
@@ -46,71 +46,65 @@ class MovieViewController: UIViewController {
     
     func loadAllDatas() {
         lodingIndicator.isHidden = false
+        self.lodingIndicator.startAnimating()
+        let group = DispatchGroup()
         
-        DispatchQueue.main.async {
-            self.lodingIndicator.startAnimating()
-        }
-        
+        group.enter()
         DispatchQueue.global().async {
             self.fetchPopularData()
+            group.leave()
         }
         
+        group.enter()
         DispatchQueue.global().async {
             self.fetchNowPlayingData()
+            group.leave()
         }
         
+        group.enter()
         DispatchQueue.global().async {
             self.fetchTopRatedData()
+            group.leave()
         }
         
+        group.enter()
         DispatchQueue.global().async {
             self.fetchUpcommingData()
+            group.leave()
         }
         
-        DispatchQueue.main.async {
-            self.lodingIndicator.stopAnimating()
-        }
-        
-        DispatchQueue.main.async {
+        group.notify(queue: .main) {
+            self.MovieTableView.reloadData()
             self.lodingIndicator.isHidden = true
             self.lodingIndicator.stopAnimating()
         }
     }
     
     private func fetchPopularData() {
-        print(#function)
         networkmanager.fetchData(type: .popular) { [weak self] movie in
             self?.popularList = movie.results
-            DispatchQueue.main.async {
-                self?.MovieTableView.reloadData()
-            }
+            self?.MovieTableView.reloadData()
         }
     }
     
     private func fetchTopRatedData() {
         networkmanager.fetchData(type: .topRated) { [weak self] movie in
             self?.topRated = movie.results
-            DispatchQueue.main.async {
-                self?.MovieTableView.reloadData()
-            }
+            self?.MovieTableView.reloadData()
         }
     }
     
     private func fetchNowPlayingData() {
         networkmanager.fetchData(type: .nowPlaying) { [weak self] movie in
             self?.nowPlaying = movie.results
-            DispatchQueue.main.async {
-                self?.MovieTableView.reloadData()
-            }
+            self?.MovieTableView.reloadData()
         }
     }
     
     private func fetchUpcommingData() {
         networkmanager.fetchData(type: .upcomming) { [weak self] movie in
             self?.upcoming = movie.results
-            DispatchQueue.main.async {
-                self?.MovieTableView.reloadData()
-            }
+            self?.MovieTableView.reloadData()
         }
     }
 }
