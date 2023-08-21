@@ -10,15 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="321" id="ocr-PX-XvU" customClass="MovieTableViewCell" customModule="TMDBProject" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="550" height="321"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="226" id="ocr-PX-XvU" customClass="MovieTableViewCell" customModule="TMDBProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="550" height="226"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ocr-PX-XvU" id="aC6-u2-bDZ">
-                <rect key="frame" x="0.0" y="0.0" width="550" height="321"/>
+                <rect key="frame" x="0.0" y="0.0" width="550" height="226"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eij-Te-bDo">
-                        <rect key="frame" x="0.0" y="0.0" width="550" height="321"/>
+                        <rect key="frame" x="0.0" y="0.0" width="550" height="226"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="suH-N1-TM5">
                             <size key="itemSize" width="128" height="128"/>
@@ -38,7 +38,7 @@
             <connections>
                 <outlet property="MovieCollectionView" destination="eij-Te-bDo" id="WxG-b6-dpe"/>
             </connections>
-            <point key="canvasLocation" x="254.96183206106869" y="120.07042253521128"/>
+            <point key="canvasLocation" x="254.96183206106869" y="86.619718309859152"/>
         </tableViewCell>
     </objects>
     <resources>

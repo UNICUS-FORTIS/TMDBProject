@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class MovieTableViewCell: UITableViewCell {
     
     
@@ -44,10 +43,10 @@ class MovieTableViewCell: UITableViewCell {
         let height = UIScreen.main.bounds.height
         layout.itemSize = CGSize(width: width/2.5, height: height/3)
         layout.sectionInset = UIEdgeInsets(top: 0, left: spacing*2, bottom: 0, right: spacing*2)
-        // 셀의 가로간격이 안벌어짐.
-        layout.minimumInteritemSpacing = spacing * 3
-        //셀 세로간격
-        //        layout.minimumLineSpacing = spacing
+        // vertical
+//        layout.minimumInteritemSpacing = spacing * 3
+        // horizental
+        layout.minimumLineSpacing = spacing*2
         layout.scrollDirection = .horizontal
         MovieCollectionView.collectionViewLayout = layout
         MovieCollectionView.showsHorizontalScrollIndicator = false

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1385C92A9386A100EE12E6 /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1385C82A9386A100EE12E6 /* TVViewController.swift */; };
+		DE1385CC2A9386EA00EE12E6 /* TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1385CA2A9386EA00EE12E6 /* TVCollectionViewCell.swift */; };
+		DE1385CD2A9386EA00EE12E6 /* TVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1385CB2A9386EA00EE12E6 /* TVCollectionViewCell.xib */; };
+		DE1385D02A938D6500EE12E6 /* TVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1385CE2A938D6500EE12E6 /* TVTableViewCell.swift */; };
+		DE1385D12A938D6500EE12E6 /* TVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1385CF2A938D6500EE12E6 /* TVTableViewCell.xib */; };
+		DE1385D42A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1385D22A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.swift */; };
+		DE1385D52A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1385D32A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.xib */; };
 		DE34F4B62A8E5ACC007A854F /* RecommandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE34F4B42A8E5ACC007A854F /* RecommandCollectionViewCell.swift */; };
 		DE34F4B72A8E5ACC007A854F /* RecommandCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE34F4B52A8E5ACC007A854F /* RecommandCollectionViewCell.xib */; };
 		DEA64B492A8772C300C164BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA64B482A8772C300C164BE /* AppDelegate.swift */; };
@@ -33,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE1385C82A9386A100EE12E6 /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
+		DE1385CA2A9386EA00EE12E6 /* TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE1385CB2A9386EA00EE12E6 /* TVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE1385CE2A938D6500EE12E6 /* TVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTableViewCell.swift; sourceTree = "<group>"; };
+		DE1385CF2A938D6500EE12E6 /* TVTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVTableViewCell.xib; sourceTree = "<group>"; };
+		DE1385D22A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DE1385D32A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		DE34F4B42A8E5ACC007A854F /* RecommandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE34F4B52A8E5ACC007A854F /* RecommandCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommandCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEA64B452A8772C200C164BE /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +131,12 @@
 				DEA64B7E2A87B80900C164BE /* MovieCollectionViewCell.xib */,
 				DE34F4B42A8E5ACC007A854F /* RecommandCollectionViewCell.swift */,
 				DE34F4B52A8E5ACC007A854F /* RecommandCollectionViewCell.xib */,
+				DE1385CA2A9386EA00EE12E6 /* TVCollectionViewCell.swift */,
+				DE1385CB2A9386EA00EE12E6 /* TVCollectionViewCell.xib */,
+				DE1385CE2A938D6500EE12E6 /* TVTableViewCell.swift */,
+				DE1385CF2A938D6500EE12E6 /* TVTableViewCell.xib */,
+				DE1385D22A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.swift */,
+				DE1385D32A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +146,7 @@
 			children = (
 				DEA64B4C2A8772C300C164BE /* MovieViewController.swift */,
 				DED12DD62A8B854A00849064 /* DetailViewController.swift */,
+				DE1385C82A9386A100EE12E6 /* TVViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,13 +259,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1385D52A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.xib in Resources */,
 				DEA64B692A8784F100C164BE /* .gitignore in Resources */,
 				DEA64B702A87899F00C164BE /* MovieTableViewCell.xib in Resources */,
+				DE1385CD2A9386EA00EE12E6 /* TVCollectionViewCell.xib in Resources */,
 				DE34F4B72A8E5ACC007A854F /* RecommandCollectionViewCell.xib in Resources */,
 				DEA64B552A8772C300C164BE /* LaunchScreen.storyboard in Resources */,
 				DEA64B522A8772C300C164BE /* Assets.xcassets in Resources */,
 				DEA64B502A8772C300C164BE /* Main.storyboard in Resources */,
 				DEA64B802A87B80900C164BE /* MovieCollectionViewCell.xib in Resources */,
+				DE1385D12A938D6500EE12E6 /* TVTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,13 +285,17 @@
 				DED12DD72A8B854A00849064 /* DetailViewController.swift in Sources */,
 				DED12DD92A8B950400849064 /* MoveSceneProtocols.swift in Sources */,
 				DE34F4B62A8E5ACC007A854F /* RecommandCollectionViewCell.swift in Sources */,
+				DE1385CC2A9386EA00EE12E6 /* TVCollectionViewCell.swift in Sources */,
 				DEA64B4D2A8772C300C164BE /* MovieViewController.swift in Sources */,
 				DEA64B7C2A87917A00C164BE /* ReusableProtocols.swift in Sources */,
 				DEA64B492A8772C300C164BE /* AppDelegate.swift in Sources */,
 				DEA64B6C2A87851300C164BE /* APIKey.swift in Sources */,
 				DEA64B7F2A87B80900C164BE /* MovieCollectionViewCell.swift in Sources */,
 				DEA64B792A878D6100C164BE /* Movie.swift in Sources */,
+				DE1385D02A938D6500EE12E6 /* TVTableViewCell.swift in Sources */,
+				DE1385C92A9386A100EE12E6 /* TVViewController.swift in Sources */,
 				DEA64B852A87D07500C164BE /* Endpoint.swift in Sources */,
+				DE1385D42A93BF9E00EE12E6 /* TVHeaderCollectionReusableView.swift in Sources */,
 				DEA64B4B2A8772C300C164BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,10 +18,8 @@ class NetworkManager {
         Headers.accept
     ]
     
-    public func fetchData(type: Endpoint, completion: @escaping (MovieData)-> Void ) {
-        
-        let url = type.requestURL+"language=ko-KR?page=1"
-        
+    public func fetchData(url: String, completion: @escaping (MovieData)-> Void ) {
+        print(url)
         AF.request(url, method: .get, headers: myHeader)
             .validate()
             .responseDecodable(of: MovieData.self) { response in
@@ -45,6 +43,28 @@ class NetworkManager {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    public func fetchTVData(url: String, completion: @escaping (TVData)-> Void ) {
+        print(url)
+        AF.request(url, method: .get, headers: myHeader)
+            .validate()
+            .responseDecodable(of: TVData.self) { response in
+            
+            guard let value = response.value else { return }
+            completion(value)
+        }
+    }
+    
+    public func fetchGenericTVData<T: Decodable>(url: String, dataModel: T.Type, completion: @escaping (T)-> Void ) {
+        print(url)
+        AF.request(url, method: .get, headers: myHeader)
+            .validate()
+            .responseDecodable(of: T.self) { response in
+            
+            guard let value = response.value else { return }
+            completion(value)
         }
     }
 }

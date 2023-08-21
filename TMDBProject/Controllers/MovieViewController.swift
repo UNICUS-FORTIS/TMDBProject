@@ -15,7 +15,7 @@ class MovieViewController: UIViewController {
     let networkmanager = NetworkManager.shared
     @IBOutlet weak var lodingIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var MovieTableView: UITableView!
+    @IBOutlet weak var movieTableView: UITableView!
     
     var popularList:[Movie] = []
     var nowPlaying:[Movie] = []
@@ -28,20 +28,19 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadAllDatas()
         lodingIndicator.isHidden = true
         registerTVCell()
-        MovieTableView.dataSource = self
-        MovieTableView.delegate = self
-        MovieTableView.rowHeight = 300
-        MovieTableView.sectionFooterHeight = 0
-        //테이블뷰 밑줄 없애는 방법
-        MovieTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: MovieTableView.bounds.width)
-        loadAllDatas()
+        movieTableView.dataSource = self
+        movieTableView.delegate = self
+        movieTableView.rowHeight = 300
+        movieTableView.sectionFooterHeight = 0
+        movieTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: movieTableView.bounds.width)
     }
     
     private func registerTVCell() {
         let nib = UINib(nibName: MovieTableViewCell.identifier, bundle: nil)
-        MovieTableView.register(nib, forCellReuseIdentifier: MovieTableViewCell.identifier)
+        movieTableView.register(nib, forCellReuseIdentifier: MovieTableViewCell.identifier)
     }
     
     func loadAllDatas() {
@@ -74,37 +73,37 @@ class MovieViewController: UIViewController {
         }
         
         group.notify(queue: .main) {
-            self.MovieTableView.reloadData()
+            self.movieTableView.reloadData()
             self.lodingIndicator.isHidden = true
             self.lodingIndicator.stopAnimating()
         }
     }
     
     private func fetchPopularData() {
-        networkmanager.fetchData(type: .popular) { [weak self] movie in
+        networkmanager.fetchData(url: URL.popularURL) { [weak self] movie in
             self?.popularList = movie.results
-            self?.MovieTableView.reloadData()
+            self?.movieTableView.reloadData()
         }
     }
     
     private func fetchTopRatedData() {
-        networkmanager.fetchData(type: .topRated) { [weak self] movie in
+        networkmanager.fetchData(url: URL.topRatedURL) { [weak self] movie in
             self?.topRated = movie.results
-            self?.MovieTableView.reloadData()
+            self?.movieTableView.reloadData()
         }
     }
     
     private func fetchNowPlayingData() {
-        networkmanager.fetchData(type: .nowPlaying) { [weak self] movie in
+        networkmanager.fetchData(url: URL.nowPlayingURL) { [weak self] movie in
             self?.nowPlaying = movie.results
-            self?.MovieTableView.reloadData()
+            self?.movieTableView.reloadData()
         }
     }
     
     private func fetchUpcommingData() {
-        networkmanager.fetchData(type: .upcomming) { [weak self] movie in
+        networkmanager.fetchData(url: URL.upcommingURL) { [weak self] movie in
             self?.upcoming = movie.results
-            self?.MovieTableView.reloadData()
+            self?.movieTableView.reloadData()
         }
     }
 }
@@ -120,7 +119,7 @@ extension MovieViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = MovieTableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as! MovieTableViewCell
+        let cell = movieTableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as! MovieTableViewCell
         
         switch indexPath.section {
         case 0:
