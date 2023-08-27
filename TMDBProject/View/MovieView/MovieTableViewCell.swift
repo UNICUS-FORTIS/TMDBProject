@@ -40,7 +40,7 @@ class MovieTableViewCell: UITableViewCell {
         let spacing:CGFloat = 10
         let width = UIScreen.main.bounds.width - spacing
         let height = UIScreen.main.bounds.height
-        layout.itemSize = CGSize(width: width/2.3, height: height/3)
+        layout.itemSize = CGSize(width: width/2.6, height: height/4)
         layout.sectionInset = UIEdgeInsets(top: 0, left: spacing*2, bottom: 0, right: spacing*2)
         // vertical
 //        layout.minimumInteritemSpacing = spacing * 3

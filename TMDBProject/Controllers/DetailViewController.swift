@@ -63,8 +63,8 @@ class DetailViewController: UIViewController {
     
     public func setupDetails(item: Movie) {
         DispatchQueue.global().async { [weak self] in
-            guard let backdropURL = URL.createRecommandationIMG(for: item.backdropPath),
-                  let posterURL = URL.createRecommandationIMG(for: item.posterPath) else {
+            guard let backdropURL = URL.getMovieImage(for: item.backdropPath),
+                  let posterURL = URL.getMovieImage(for: item.posterPath) else {
                 return
             }
             DispatchQueue.main.async {

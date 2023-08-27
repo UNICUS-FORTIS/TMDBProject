@@ -17,19 +17,21 @@ class MovieCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        posterImageView.contentMode = .scaleAspectFit
+        posterImageView.contentMode = .scaleAspectFill
         contentView.backgroundColor = .clear
-        posterImageView.backgroundColor = .brown
+        posterImageView.backgroundColor = .clear
     }
 
     func cellConfigure(item: Movie) {
         DispatchQueue.main.async {
-            let posterURL = URL.createRecommandationIMG(for: item.posterPath)
+            let posterURL = URL.getMovieImage(for: item.posterPath)
             self.posterImageView.kf.setImage(with: posterURL)
-            // MARK: - 모서리가 이상하게 깎임.
-            self.posterImageView.layer.cornerRadius = self.posterImageView.frame.width/6
-            self.posterImageView.clipsToBounds = true
         }
+    }
+    
+    override func layoutSubviews() {
+        self.posterImageView.layer.cornerRadius = self.posterImageView.frame.width/6
+        self.posterImageView.clipsToBounds = true
     }
 }
 

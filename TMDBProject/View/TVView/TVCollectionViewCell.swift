@@ -30,8 +30,8 @@ class TVCollectionViewCell: UICollectionViewCell {
     
     func cellConfigure(item: TV) {
         DispatchQueue.main.async {
-            let posterUrl = URL.createRecommandationIMG(for: item.posterPath)
-            let backDropUrl = URL.createRecommandationIMG(for: item.backdropPath)
+            let posterUrl = URL.getMovieImage(for: item.posterPath)
+            let backDropUrl = URL.getMovieImage(for: item.backdropPath)
             self.posterImageView.kf.setImage(with: posterUrl)
             self.backDropImageView.kf.setImage(with: backDropUrl)
             self.titleLabel.text = item.name

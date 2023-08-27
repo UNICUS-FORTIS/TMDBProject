@@ -26,7 +26,7 @@ class TVTableViewCell: UITableViewCell {
     
     func cellConfigureForPopular(item: PopularTV) {
         DispatchQueue.main.async {
-            let backDropUrl = URL.createRecommandationIMG(for: item.backdropPath ?? "")
+            let backDropUrl = URL.getMovieImage(for: item.backdropPath ?? "")
             self.backDropImageView.kf.setImage(with: backDropUrl)
             self.titleLabel.text = item.name
             self.titleLabel.font = .boldSystemFont(ofSize: 25)
@@ -41,7 +41,7 @@ class TVTableViewCell: UITableViewCell {
     
     func cellConfigureForTopRated(item: TVTopRated) {
         DispatchQueue.main.async {
-            let backDropUrl = URL.createRecommandationIMG(for: item.backdropPath)
+            let backDropUrl = URL.getMovieImage(for: item.backdropPath)
             self.backDropImageView.kf.setImage(with: backDropUrl)
             self.titleLabel.text = item.name
             self.titleLabel.font = .boldSystemFont(ofSize: 25)

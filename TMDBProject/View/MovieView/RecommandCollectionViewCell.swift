@@ -26,7 +26,7 @@ class RecommandCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.titleForRCMD.text = item.title
             if let backDropPath = item.backdropPath {
-                let imageUrl = URL.createRecommandationIMG(for: backDropPath)
+                let imageUrl = URL.getMovieImage(for: backDropPath)
                 self.backdropForRCMD.kf.setImage(with: imageUrl)
             } else {
                 print("noimage")

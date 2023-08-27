@@ -25,7 +25,7 @@ extension URL {
         return URL(string: urlString)
     }
     
-    static func createRecommandationIMG(for path: String) -> URL? {
+    static func getMovieImage(for path: String) -> URL? {
         let urlString =
         "https://image.tmdb.org/t/p/original\(path)"
         
