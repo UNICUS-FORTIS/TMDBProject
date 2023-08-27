@@ -33,7 +33,7 @@ class MovieViewController: UIViewController {
         registerTVCell()
         movieTableView.dataSource = self
         movieTableView.delegate = self
-        movieTableView.rowHeight = 300
+        movieTableView.rowHeight = UIScreen.main.bounds.height / 3.5
         movieTableView.sectionFooterHeight = 0
         movieTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: movieTableView.bounds.width)
     }

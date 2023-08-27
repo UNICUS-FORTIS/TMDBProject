@@ -19,6 +19,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         posterImageView.contentMode = .scaleAspectFit
         contentView.backgroundColor = .clear
+        posterImageView.backgroundColor = .brown
     }
 
     func cellConfigure(item: Movie) {
@@ -26,8 +27,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
             let posterURL = URL.createRecommandationIMG(for: item.posterPath)
             self.posterImageView.kf.setImage(with: posterURL)
             // MARK: - 모서리가 이상하게 깎임.
-//            self.posterImageView.layer.cornerRadius = self.posterImageView.frame.width/6
-//            self.posterImageView.clipsToBounds = true
+            self.posterImageView.layer.cornerRadius = self.posterImageView.frame.width/6
+            self.posterImageView.clipsToBounds = true
         }
     }
 }

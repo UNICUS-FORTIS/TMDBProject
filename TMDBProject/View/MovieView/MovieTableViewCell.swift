@@ -38,10 +38,9 @@ class MovieTableViewCell: UITableViewCell {
     private func setupCVCell() {
         let layout = UICollectionViewFlowLayout()
         let spacing:CGFloat = 10
-        // 이게 아이폰에서 디바이스 넓이를 가지고올수있는 코드
         let width = UIScreen.main.bounds.width - spacing
         let height = UIScreen.main.bounds.height
-        layout.itemSize = CGSize(width: width/2.5, height: height/3)
+        layout.itemSize = CGSize(width: width/2.3, height: height/3)
         layout.sectionInset = UIEdgeInsets(top: 0, left: spacing*2, bottom: 0, right: spacing*2)
         // vertical
 //        layout.minimumInteritemSpacing = spacing * 3
